@@ -1,23 +1,85 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-Wrap the DrawerLayout with FrameLayout to use the same View type for the same view ID
-across the layout configurations
--->
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/activity_container"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".ShowUsers">
 
-    <androidx.drawerlayout.widget.DrawerLayout
-        android:id="@+id/drawer_layout"
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true">
+        android:layout_height="wrap_content"
+        android:padding="16dp">
 
-        <include
-            android:id="@+id/app_bar_show_users"
-            layout="@layout/app_bar_show_users"
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:layout_marginTop="14dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="Back"
+            android:src="@drawable/arrow_back_icon" />
+
+        <Button
+            android:id="@+id/useLocation"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="3dp"
+            android:layout_toEndOf="@id/backButton"
+            android:background="@color/placeholder_color"
+            android:drawableLeft="@drawable/setlocation"
+            android:gravity="left|center_vertical"
+            android:text="Search contacts"
+            android:textColor="#909090" />
 
-    </androidx.drawerlayout.widget.DrawerLayout>
-</FrameLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="90dp"
+            android:src="@drawable/searchaccounticon" />
+        <Button
+            android:id="@+id/userinfo1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="90dp"
+            android:layout_marginLeft="45dp"
+            android:layout_toEndOf="@id/searchcontactbutton1"
+            android:background="@color/placeholder_color"
+            android:drawableLeft="@drawable/setlocation"
+            android:gravity="left|center_vertical"
+            android:text="Profile"
+            android:textColor="#909090" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/imageButton2"
+            android:layout_alignTop="@+id/userinfo1"
+            android:layout_alignEnd="@+id/userinfo1"
+            android:layout_alignBottom="@+id/userinfo1"
+            android:layout_marginStart="317dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="14dp"
+            android:background="@drawable/circlecallbutton"
+            android:layout_marginBottom="2dp"
+            app:srcCompat="@android:drawable/stat_sys_phone_call"
+            android:backgroundTint="@color/black"/>
+
+    </RelativeLayout>
+
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
