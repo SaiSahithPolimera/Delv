@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     private String verificationID;
     private EditText phone, otp;
-    private Button btngenOTP, btnverify, btnResend;
+    private Button btngenOTP, btnverify, btnResend, goAnyWay;
 
     private FirebaseAuth mAuth;
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         btngenOTP = findViewById(R.id.btngenerateOTP);
         btnverify = findViewById(R.id.btnverifyOTP);
         btnResend = findViewById(R.id.btnResendOTP);
+        goAnyWay = findViewById(R.id.GoAnyWay);
 
         mAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
@@ -59,6 +60,16 @@ public class MainActivity extends AppCompatActivity {
                     String number = phone.getText().toString();
                     sendVerificationCode(number);
                 }
+            }
+        });
+
+        goAnyWay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Moved to next activity!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, HomeActivity.class));
+                finish();
+
             }
         });
 
