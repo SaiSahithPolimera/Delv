@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context=".ShowUsers">
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <RelativeLayout
-        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:layout_height="wrap_content">
 
         <ImageButton
             android:id="@+id/backButton"
-            android:layout_width="50sp"
-            android:layout_height="50sp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginTop="14dp"
             android:background="@android:color/transparent"
-            android:contentDescription="Back"
+            android:contentDescription="@string/back"
             android:src="@drawable/arrow_back_icon" />
 
         <TextView
@@ -27,26 +27,27 @@
             android:layout_width="298dp"
             android:layout_height="47dp"
             android:layout_marginTop="16dp"
-            android:layout_marginRight="3dp"
+            android:layout_marginStart="3dp"
             android:layout_toEndOf="@id/backButton"
-            android:background="@color/placeholder_color"
-
+            android:background="#DACFCF"
             android:gravity="left|center_vertical"
-            android:text="Search contacts"
-            android:textColor="#909090" />
+            android:text="@string/search_contacts"
+            android:textColor="#455A64"
+            tools:ignore="RtlHardcoded" />
 
     </RelativeLayout>
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:padding="16dp">
 
         <ImageButton
             android:id="@+id/imageButton2"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginTop="90dp"
+            android:layout_marginTop="16dp"
             android:contentDescription="ProfileImage"
             android:src="@drawable/searchaccounticon" />
 
@@ -54,34 +55,25 @@
             android:id="@+id/userinfo1"
             android:layout_width="279dp"
             android:layout_height="49dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="90dp"
-
-            android:background="@color/placeholder_color"
-
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="-50dp"
+            android:background="#F4EDED"
             android:gravity="left|center_vertical"
             android:text="Profile"
-            android:textColor="#909090" />
+            android:textColor="#546E7A"
+            tools:ignore="RtlHardcoded" />
 
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="48dp"
-            android:layout_height="58dp"
-            android:layout_alignStart="@+id/imageButton2"
-            android:layout_alignTop="@+id/userinfo1"
-            android:layout_alignEnd="@+id/userinfo1"
-            android:layout_alignBottom="@+id/userinfo1"
-            android:layout_marginStart="330dp"
-            android:layout_marginTop="6dp"
-            android:layout_marginEnd="-41dp"
-            android:layout_marginBottom="2dp"
-            android:background="@drawable/circlecallbutton"
-            android:backgroundTint="@color/black"
-            android:contentDescription="phoneCallButton"
-            app:srcCompat="@android:drawable/stat_sys_phone_call" />
+    </LinearLayout>
 
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="end"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/circlecallbutton"
+        android:backgroundTint="@color/black"
+        android:contentDescription="phoneCallButton"
+        app:srcCompat="@android:drawable/stat_sys_phone_call" />
 
-    </RelativeLayout>
-
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>
